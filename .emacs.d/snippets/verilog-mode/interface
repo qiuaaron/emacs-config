@@ -1,0 +1,6 @@
+#name : interface
+#key:interface
+# --
+interface ${1:`(Aaron-verilog-insert-file-name)`};
+  $0
+endinterface //$1

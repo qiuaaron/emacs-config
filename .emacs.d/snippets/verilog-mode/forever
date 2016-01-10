@@ -1,0 +1,7 @@
+#contributor : Aaron
+#name : forever
+#key:f
+# --
+forever begin
+  $0
+end

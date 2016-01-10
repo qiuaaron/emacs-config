@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : signal
+#key:si
+# --
+SIGNAL $1 : $2;

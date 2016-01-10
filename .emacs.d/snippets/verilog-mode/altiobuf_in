@@ -1,0 +1,23 @@
+#contributor : Aaron
+#name : altiobuf_in
+altiobuf_in #(	
+#key:altiobuf_in
+# --
+		.intended_device_family( "unused" ),
+		.enable_bus_hold( "FALSE" ),
+		.number_of_channels( 1 ),
+		.use_differential_mode( "FALSE" ),
+		.use_dynamic_termination_control( "FALSE" ),
+		.use_in_dynamic_delay_chain( "FALSE" ),
+		.lpm_type( "altiobuf_in" ),
+		.lpm_hint( "unused")
+		) U_ALTIOBUF_IN (
+				 .datain( datain ),
+				 .datain_b( datain_b ),
+				 .dataout( dataout ),
+				 .dynamicterminationcontrol( dynamicterminationcontrol ),
+				 .io_config_clk( io_config_clk ),
+				 .io_config_clkena( io_config_clkena ),
+				 .io_config_datain( io_config_datain ),
+				 .io_config_update( io_config_update ),
+				 );

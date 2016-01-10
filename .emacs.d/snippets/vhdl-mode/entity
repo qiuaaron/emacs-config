@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : entity
+#key:entity
+# --
+ENTITY ${1:entity_name} IS
+  PORT(
+  );
+END ENTITY $1;

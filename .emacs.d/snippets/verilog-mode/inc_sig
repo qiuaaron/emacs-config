@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : add one to signal
+#key:inc
+# --
+$1 <= $1 + 1;$0

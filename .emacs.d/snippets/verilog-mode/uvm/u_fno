@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : uvm_new_with_object
+#key:u_f
+# --
+function new ( string name = ${1:"`(Aaron-verilog-get-class-name)`"} );
+  super.new( name );
+  $0
+endfunction // new

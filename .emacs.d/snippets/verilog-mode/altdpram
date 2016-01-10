@@ -1,0 +1,191 @@
+#contributor : Aaron
+#name : altdpram
+#key:altdpram
+# --
+
+Parameterized dual-port RAM megafunction
+
+1.The MegaWizard Plug-In Manager calls altdpram only when the read address is asynchronous.
+
+2.The Quartus II Compiler automatically implements this function in logic cells in MAX series devices. The altdpram function uses DFFE primitives or latch arrays in the MAX devices.
+
+3.You can use the Assignment Editor to add, change, or delete assignments and assignment values for megafunctions.
+
+
+################################################################################
+# The parameter
+################################################################################
+WIDTH
+ Integer
+ Yes
+ Width of data[] and q[] ports.
+ 
+WIDTHAD
+ Integer
+ Yes
+ Width of the rdaddress[] and wraddress[] ports.
+ 
+BYTE_SIZE
+ Integer
+ No
+ Specifies the byte size for the byte-enable mode. For Stratix III and Stratix IV devices, values are 5, 8, 9, and 10. Values 5 and 10 are supported widths, values 8 and 9 are available for backward compatibility with Stratix II device M512 blocks. For all other families, values are 8 and 9.
+ 
+WIDTH_BYTEENA
+ Integer
+ No
+ Specifies the width of the byteena input port. The WIDTH_BYTEENA parameter value must be equal to WIDTH_B / BYTE_SIZE for Stratix III and Stratix IV devices. For all other devices families, the default value is 1.
+ 
+RAM_BLOCK_TYPE
+ String
+ No
+ Values are "AUTO", "M-RAM(MEGARAM)", "M4K", "M512", "M9K", "M144K", and "MLAB(LUTRAM)". When USE_EAB parameter value is "ON", the result is a block-ram implementation, and the RAM_BLOCK_TYPE is set to MLAB(LUTRAM). When USE_EAB parameter value is "OFF", the result is a logic cell implementation.
+ 
+NUMWORDS
+ Integer
+ No
+ Number of words stored in memory. This value must be within the range 2 ^ WIDTHAD-1 < NUMWORDS <= 2 ^ WIDTHAD. If omitted, the default is 2 ^ WIDTHAD.
+ 
+LPM_FILE
+ String
+ No
+ Name of the Memory Initialization File (.mif) or Hexadecimal (Intel-Format) Output File (.hexout) containing RAM initialization data ("<file name>"), or "UNUSED". The default is "UNUSED". If omitted, default for all contents is 0. The wren port must be registered to support memory initialization.
+ 
+READ_DURING_WRITE_MODE_MIXED_PORTS
+ String
+ No
+ Read during write mode behavior. Values are "DONT_CARE", "OLD_DATA", and "NEW_DATA". If omitted, the default is "DONT_CARE".
+
+ 
+
+Values of "OLD_DATA" and "NEW_DATA" are supported only if the rdaddress input port and the q[] output port are registered by the write clock. If omitted, the default is "NEW_DATA".
+
+ 
+
+
+ Important: This parameter only applies in single-clock configurations (read address clock is the same as the write address clock).
+ 
+
+ 
+ 
+WRADDRESS_REG
+ String
+ No
+ Determines the clock used by the wraddress[] port. Values are "UNREGISTERED" and "INCLOCK". The default is "INCLOCK".
+ 
+WRADDRESS_ACLR
+ String
+ No
+ Defines whether aclr affects the wraddress[] port register. Values are "ON" and "OFF". The default is "ON".
+ 
+WRCONTROL_REG
+ String
+ No
+ Determines the clock used by the wren port. Values are "UNREGISTERED" and "INCLOCK". The default is "INCLOCK".
+
+ 
+
+If the value for WRCONTROL_REG is "INCLOCK" and the value for the USE_EAB parameter is "OFF", the RAM is implemented in registers, and all inputs to the megafunction must be registered. To register the inputs, ensure INDATA_REG is set to "INCLOCK".
+ 
+WRCONTROL_ACLR
+ String
+ No
+ Defines whether aclr affects the wren port register. Values are "ON" and "OFF". The default is "ON".
+ 
+RDADDRESS_REG
+ String
+ No
+ Determines the clock used by the rdaddress[] port. Values are "UNREGISTERED", "INCLOCK", and "OUTCLOCK". The default is "OUTCLOCK".
+ 
+RDADDRESS_ACLR
+ String
+ No
+ Defines whether aclr affects the rdaddress[] port. Values are "ON" and "OFF". The default is "ON".
+ 
+RDCONTROL_REG
+ String
+ No
+ Determines the clock used by the rden port. Values are "UNREGISTERED", "INCLOCK", and "OUTCLOCK". The default is "OUTCLOCK".
+ 
+RDCONTROL_ACLR
+ String
+ No
+ Defines whether aclr affects the rden port register. Values are "ON" and "OFF". The default is "ON".
+ 
+INDATA_REG
+ String
+ No
+ Determines the clock used by the data port. Values are "UNREGISTERED" and "INCLOCK". The default is "INCLOCK".
+ 
+INDATA_ACLR
+ String
+ No
+ Defines whether aclr affects the data[] port register. Values are "ON" and "OFF". The default is "ON".
+ 
+OUTDATA_REG
+ String
+ No
+ Determines the clock used by the q[] port. Values are "UNREGISTERED" and "OUTCLOCK". The default is "UNREGISTERED".
+ 
+OUTDATA_ACLR
+ String
+ No
+ Defines whether aclr affects the q[] port register. Values are "ON" and "OFF". The default is "ON".
+ 
+MAXIMUM_DEPTH
+ Integer
+ No
+ Specifies the slicing depth of the RAM slices.
+ 
+USE_EAB
+ String
+ No
+ Altera-specific parameter. You must use the LPM_HINT parameter to specify the USE_EAB parameter in VHDL Design Files. Values for Stratix III and Stratix IV devices are "ON" and "OFF". Values for all other devices are "ON", "OFF", and "UNUSED". (The "ON" setting is not useful in memory functions: the Quartus II software automatically implements memory functions in ESBs or EABs by default.)
+
+If the value for WRCONTROL_REG is "INCLOCK" and the value for the USE_EAB parameter is "OFF", the RAM is implemented in registers, and all inputs to the megafunction must be registered. To register the inputs, ensure INDATA_REG is set to "INCLOCK".
+
+This parameter is not available for simulation with other EDA simulators and MAX 3000 and MAX 7000 devices.
+
+altdpram #(
+	   .byte_size( 0 ),
+	   .intended_device_family( "unused" ),
+	   .indata_aclr( "ON" ),
+	   .indata_reg( "INCLOCK" ),
+	   .lpm_file( "UNUSED" ),
+	   .maximum_depth( 0 ),
+	   .numwords( 0 ),
+	   .outdata_aclr( "ON" ),
+	   .outdata_reg( "UNREGISTERED" ),
+	   .ram_block_type( "AUTO" ),
+	   .rdaddress_aclr( "ON" ),
+	   .rdaddress_reg( "OUTCLOCK" ),
+	   .rdcontrol_aclr( "ON" ),
+	   .rdcontrol_reg( "OUTCLOCK" ),
+	   .read_during_write_mode_mixed_ports( "DONT_CARE" ),
+	   .use_eab( "ON" ),
+	   .width( 1 ),
+	   .width_byteena( 1 ),
+	   .widthad( 1 ),
+	   .wraddress_aclr( "ON" ),
+	   .wraddress_reg( "INCLOCK" ),
+	   .wrcontrol_aclr( "ON" ),
+	   .wrcontrol_reg( "INCLOCK" ),
+	   .lpm_type( "altdpram" ),
+	   .lpm_hint( "unused" )
+	   ) U_ALTDPRAM  (
+			  .aclr( aclr ),
+			  .byteena( byteena ),
+			  .data( data ),
+			  .inclock( inclock ),
+			  .inclocken( inclocken ),
+			  .outclock( outclock ),
+			  .outclocken( outclocken ),
+			  .q( q ),
+			  .rdaddress( rdaddress ),
+			  .rdaddressstall( rdaddressstall ),
+			  .rden( rden ),
+			  .wraddress( wraddress ),
+			  .wraddressstall( wraddressstall ),
+			  .wren( wren )
+			  );
+
+

@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : verilog-mode-auto-all-io
+#key:auto_allio
+# --
+  /*AUTOINPUT*/
+  /*AUTOOUTPUT*/
+  /*AUTOINOUT*/
+  /*AUTOWIRE*/

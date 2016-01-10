@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : signal negedge
+#key:sig
+# --
+$1 & ~$1 $0

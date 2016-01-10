@@ -1,0 +1,6 @@
+#contributor : Aaron
+#name : verilog-mode-auto-inst
+#key:vm_auto_inst
+# --
+  (/*AUTOINST*/
+  );

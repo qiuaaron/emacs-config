@@ -1,0 +1,7 @@
+#contributor:Aaron
+#name:if
+#key:if
+#-- 
+IF ${1:conditional} THEN
+  $0
+END IF;l

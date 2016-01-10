@@ -1,0 +1,22 @@
+#contributor : Aaron
+#name : lpm_mult
+lpm_mult #( .lpm_hint( "MAXIMIZE_SPEED=1" ),
+#key:lpm_mult
+# --
+	    .lpm_pipeline( 2 ) ,
+	    .lpm_representation( "SIGNED" ),
+	    .lpm_type( "LPM_MULT" ) ,
+	    .lpm_widtha( 18 ),
+	    .lpm_widthb( 18 ),
+	    .lpm_widthp( 36 )
+	    ) U_LPM_MULT (
+		     .dataa (dataa),
+		     .datab (datab),
+		     .clock (clock),
+		     .result ( result),
+		     .aclr (1'b0),
+		     .clken (1'b1),
+		     .sum (1'b0)
+		     );
+
+

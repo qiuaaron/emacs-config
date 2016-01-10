@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : verilog-mode-auto-inout
+#key:vm_auto_inout
+# --
+  /*AUTOINOUT*/

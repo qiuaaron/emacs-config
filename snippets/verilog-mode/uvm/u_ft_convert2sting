@@ -1,0 +1,7 @@
+#contributor : Aaron
+#name : convert2string
+#key:u_ft
+# --
+function string convert2string();
+  $0
+endfunction // convert2string

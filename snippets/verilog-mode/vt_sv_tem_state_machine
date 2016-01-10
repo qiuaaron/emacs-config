@@ -1,0 +1,32 @@
+#contributor : Aaron
+#name : vt_sv_tem_state_machine
+#key:vt_sv_tem_state_machine
+# --
+
+always_comb begin : NEXT_STATE
+  next_state = current_state;
+  case ( next_state )
+    $0
+  endcase	  
+end // block: NEXT_STATE
+
+always_ff @ ( posedge ${1:clk_sys} or negedge ${2:rst_sys_n} ) begin : CURRENT_STATE
+  if ( !$2 ) begin
+    current_state <= IDLE;
+  end
+  else begin
+    current_state <= next_state;
+  end
+end // block: CURRENT_STATE
+
+always_ff @ ( posedge $1 or negedge $2 ) begin : SM_OUT
+  if ( !$2 ) begin
+    /*AUTORESET*/
+  end
+  else begin
+    case( current_state )
+    endcase // case( current_state )
+  end
+end // block: SM_OUT
+
+

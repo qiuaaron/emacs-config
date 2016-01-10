@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : verilog-mode-auto-tb-all-io
+#key:auto_tb_sig
+# --
+  /*AUTOREGINPUT*/
+  /*AUTOOUTPUT*/
+  /*AUTOINOUT*/
+  /*AUTOWIRE*/

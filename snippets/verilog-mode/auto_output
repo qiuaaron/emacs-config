@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : verilog-mode-auto-output
+#key:auto_output
+# --
+  /*AUTOOUTPUT*/

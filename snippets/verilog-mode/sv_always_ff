@@ -1,0 +1,7 @@
+#contributor : Aaron
+#name : sv_always_ff
+#key:sv_always_ff
+# --
+always_ff @ ( posedge ${1:clk_sys} ) begin
+  $0
+end

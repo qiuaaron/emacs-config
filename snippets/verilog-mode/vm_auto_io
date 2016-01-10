@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : verilog-mode-auto
+#key:vm_auto_io
+# --
+/*AUTOINPUT*/
+  /*AUTOOUTPUT*/
+  /*AUTOINOUT*/
+  /*AUTOWIRE*/

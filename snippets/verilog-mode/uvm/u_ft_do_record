@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : do_record
+#key:u_ft
+# --
+function void do_record(uvm_recorder recorder);
+  $0
+endfunction // do_record
+

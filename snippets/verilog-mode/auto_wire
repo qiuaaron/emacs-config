@@ -1,0 +1,5 @@
+#contributor : Aaron
+#name : verilog-mode-auto-wire
+#key:auto_wire
+# --
+  /*AUTOWIRE*/

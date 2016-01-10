@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Aaron-tmp-bookmark"
+ (filename . "~/project/svn/penguin/penguin_spu_askpsk/trunk/src/digidemod/demod/matching_filter.v")
+ (front-context-string . "\n	end\n	FILTERING")
+ (rear-context-string . "load_addr;\n	  di")
+ (position . 2937))
+)

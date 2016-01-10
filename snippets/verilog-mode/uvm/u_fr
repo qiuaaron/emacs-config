@@ -1,0 +1,9 @@
+#contributor : Aaron
+#name : uvm_run_phase
+#key:u_f
+# --
+task void run_phase ( uvm_phase phase );
+  $0
+endtask // run_phase
+
+

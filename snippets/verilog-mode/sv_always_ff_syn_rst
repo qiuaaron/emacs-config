@@ -1,0 +1,12 @@
+#contributor : Aaron
+#name : sv_always_ff_syn_rst
+#key:sv_always_ff_syn_rst
+# --
+always_ff @ ( posedge ${1:clk_sys} ) begin
+  if ( ${2:rst} ) begin
+    /*AUTORESET*/
+  end
+  else begin
+    $0
+  end
+end

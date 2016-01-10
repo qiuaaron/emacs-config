@@ -1,0 +1,8 @@
+#contributor : Aaron
+#name : combinal process
+#key:c
+# --
+PROCESS(  )
+BEGIN
+	
+END PROCESS;

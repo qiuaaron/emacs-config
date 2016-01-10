@@ -1,0 +1,61 @@
+#contributor : Aaron
+#name : dcfifo
+dcfifo #( .lpm_width( 1 ),
+#key:dcfifo
+# --
+	  .lpm_widthu( 1 ),   //The width for usedw
+	  // The value must be at least 4. The value assigned must comply with 
+	  // this equation  2^( LPM_WIDTHU-1 ) < LPM_NUMWORDS <= 2^LPM_WIDTHU.
+	  .lpm_numwords( 1 ), 
+	  .lpm_showahead( "OFF" ),
+	  .lpm_hint( "UNUSED" ),
+	  // Specifies whether or not to enable the protection circuitry for 
+	  // overflow checking that disables the wrreq port
+	  .underflow_checking( "ON" ), 
+	  .overflow_checking( "ON" ),
+	  // Specify the number of register stages that you want to internally 
+	  // add to the rdusedw, default is 1
+	  .delay_rdusedw( 1 ),         
+	  .delay_wrusedw( 1 ),
+  	  // For Cyclone II and Stratix II devices and later, the values of
+	  // these parameters are internally reduced by two. Thus, the
+	  // default value of 3 for these parameters corresponds to a
+	  // single synchronization stage; a value of 4 results in two
+	  // synchronization stages, and so on. For these devices,
+	  // choose at least 4 (two synchronization stages) for
+	  // metastability protection.
+	  .rdsync_delaypipe( 3 ),
+	  .wrsync_delaypipe( 3 ),
+	  .use_eab( "ON" ),
+	  .clocks_are_synchronized( "FALSE" ),
+	  .lpm_type( "dcfifo" ),
+	  .intended_device_family( "UNUSED" ), // Only for simulation
+	  //Specifies whether to register the q output. The values are
+	  //ON and OFF. If omitted, the default value is OFF.
+	  //You can set the parameter to ON or OFF for the SCFIFO or
+	  //the DCFIFO, that do not target Stratix II, Cyclone II, and new
+	  //devices. This parameter does not apply to these devices
+	  //because the q output must be registered in normal mode
+	  //and unregistered in show-ahead mode for the DCFIFO.
+	  .add_ram_output_register( "OFF" ),
+	  //Increase usedw by one bit to prevent the fifo from rolling over
+	  //to zero when it is full
+	  .add_usedw_msb_bit( "OFF" ),
+	  .write_aclr_synch( "OFF" ),
+	  ) U_DCFIFO (
+		      .data( data ),
+		      .rdclk( rdclk ),
+		      .wrclk( wrclk ),
+		      .aclr( aclr ),
+		      .rdreq( rdreq ),
+		      .wrreq( wrreq ),
+		      .rdfull( rdfull ),
+		      .wrfull( wrfull ),
+		      .rdempty( rdempty ),
+		      .wrempty( wrempty ),
+		      .rdusedw( rdusedw ),
+		      .wrusedw( wrusedw ),
+		      .q( q )
+		      );
+
+

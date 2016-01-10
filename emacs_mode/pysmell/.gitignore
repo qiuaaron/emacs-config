@@ -1,0 +1,11 @@
+*.pyc
+*~
+*#*
+*.swp
+*.pyc
+.DS_Store
+PYSMELLTAGS.*
+build
+dist
+pysmell.egg-info
+

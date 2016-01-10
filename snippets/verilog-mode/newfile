@@ -1,0 +1,7 @@
+#contributor : Aaron
+#name : newfile
+#key:nf
+# --
+module `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`(/*AUTOARG*/);
+  $0
+endmodule

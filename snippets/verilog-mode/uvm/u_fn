@@ -1,0 +1,9 @@
+#contributor : Aaron
+#name : uvm_new_with_component
+#key:u_f
+# --
+function new ( string name = ${1:"`(Aaron-verilog-get-class-name)`"} ,
+	       uvm_component parent = null );
+  super.new( name , parent );
+  $0
+endfunction // new

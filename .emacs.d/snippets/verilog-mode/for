@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : for
-#key:for
-# --
-for ( ${1:int i = 0} ; ${2:i < N} ; ${3:i++} ) begin
-  $0
-end

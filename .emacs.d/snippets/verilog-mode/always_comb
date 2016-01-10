@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : vv_always_comb
-#key:always_comb
-# --
-always @ ( /*AUTOSENSE*/ ) begin
-  $0
-end

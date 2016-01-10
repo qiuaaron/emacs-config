@@ -1,6 +1,0 @@
-#name : package
-#key:p
-# --
-package ${1:`(Aaron-verilog-insert-file-name)`};
-  $0
-endpackage //$1

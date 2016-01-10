@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : do_print
-#key:u_ft
-# --
-function void do_print(uvm_printer printer);
-  $0
-endfunction // do_print

@@ -1,8 +1,0 @@
-#contributor : Aaron
-#name : verilog-mode-auto-path
-#key:auto_path
-# --
-// Local Variables:
-// verilog-library-directories:("." )
-// verilog-library-flags:("-y /eda/Xilinx/Xilinx/ISE/verilog/src/unisims/ -y /eda/Xilinx/Xilinx/ISE/verilog/src/XilinxCoreLib/ -v /eda/altera/altera/eda/sim_lib/altera_mf.v")
-// End:

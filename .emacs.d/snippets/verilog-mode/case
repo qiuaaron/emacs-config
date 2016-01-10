@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : case
-#key:c
-# --
-case ( $0 ) 
-
-endcase

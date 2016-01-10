@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : do_copy
-#key:u_ft
-# --
-function void do_copy(uvm_object rhs);
-  $0
-endfunction // do_copy

@@ -1,6 +1,0 @@
-#name : initial
-#key:initial
-# --
-initial begin
-  $0
-end

@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : sv_always_comb
-#key:sv_always_comb
-# --
-always_comb begin
-  $0
-end

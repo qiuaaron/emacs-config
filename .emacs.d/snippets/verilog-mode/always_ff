@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : vv_always_ff
-#key:always_ff
-# --
-always @ ( posedge ${1:clk_sys} ) begin
-  $0
-end

@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : verilog-mode-set-modular-search-path
-#key:vm_set_library_path
-# --
-// Local Variables:
-// verilog-library-directories:("$0" )
-// End:

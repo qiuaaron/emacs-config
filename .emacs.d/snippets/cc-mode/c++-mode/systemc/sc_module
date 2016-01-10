@@ -1,7 +1,0 @@
-#name : sc_module ... { ... }
-# --
-SC_MDULE(${1:Name})
-{
-public:
-    SC_CTOR($1)$0;
-};

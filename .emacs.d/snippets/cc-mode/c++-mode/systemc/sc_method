@@ -1,4 +1,0 @@
-#name : sc_method ... { ... }
-# --
-SC_METHOD(${1:Name});
-sensitive << ${2:EVENT};

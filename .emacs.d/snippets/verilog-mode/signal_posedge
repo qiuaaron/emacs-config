@@ -1,5 +1,0 @@
-#contributor : Aaron
-#name : signal posedge
-#key:sig
-# --
-~$1 & $1 $0

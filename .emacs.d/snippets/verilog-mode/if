@@ -1,6 +1,0 @@
-#name : if end
-#key:if
-# --
-if ( ${1:condition} ) begin
-  $0
-end

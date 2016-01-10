@@ -1,7 +1,0 @@
-#contributor : Aaron
-#name : do_compare
-#key:u_ft
-# --
-function bit do_compare(uvm_object rhs, uvm_comparer comparer);
-  $0
-endfunction // do_compare

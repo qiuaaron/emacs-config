@@ -1,9 +1,0 @@
-#contributor : Aaron
-#name : class
-#key:c
-# --
-class ${1:name} ${2:extends} ${3};
-  $0
-endclass //$1
-
-

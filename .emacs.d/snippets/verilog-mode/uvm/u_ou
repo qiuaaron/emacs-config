@@ -1,6 +1,0 @@
-#contributor : Aaron
-#name : uvm_object_utils
-#key:u_u
-# --
-\`uvm_object_utils_begin(${1:`(Aaron-verilog-get-class-name)`})
-\`uvm_object_utils_end

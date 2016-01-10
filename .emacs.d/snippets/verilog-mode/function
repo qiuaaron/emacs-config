@@ -1,8 +1,0 @@
-#contributor : Aaron
-#name : fucntion
-#key:f
-# --
-function ${1:void} ${2:name} ( $0 );
-endfunction //$2
-
-

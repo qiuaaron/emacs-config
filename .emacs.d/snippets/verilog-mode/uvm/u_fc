@@ -1,8 +1,0 @@
-#contributor : Aaron
-#name : uvm_connect
-#key:u_f
-# --
-function void connect_phase ( uvm_phase phase );
-  $0
-endfunction //build_phase
-

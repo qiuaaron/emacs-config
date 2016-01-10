@@ -1,8 +1,0 @@
-#contributor : Aaron
-#name : verilog-mode-auto-io_in_tb
-#key:vm_auto_io_tb
-# --
-/*AUTOREGINPUT*/
-  /*AUTOOUTPUT*/
-  /*AUTOINOUT*/
-  /*AUTOWIRE*/

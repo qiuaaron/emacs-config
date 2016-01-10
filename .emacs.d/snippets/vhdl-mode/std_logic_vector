@@ -1,5 +1,0 @@
-#contributor : Aaron
-#name : std_logic_vector
-#key:sv
-# --
-STD_LOGIC_VECTOR(  ${1:15} DOWNTO ${2:0} )

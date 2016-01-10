@@ -1,4 +1,0 @@
-#name : import
-#key:import
-# --
-import "DPI-C" pure function ${1:real} ${2:sin)( ${3:real} ${4:param} );

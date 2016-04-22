@@ -51,7 +51,7 @@
 (defvar helm-one-key-menu-alist nil)
 (setq helm-one-key-menu-alist 
       '(
-	( ( "g" . "do-grep") . helm-do-grep)
+	( ( "g" . "do-grep") . helm-do-grep-ag)
 	( ( "l" . "locate" ) . helm-locate)
 	( ( "r" . "register" ) . helm-register )
 	( ( "t" . "register" ) . helm-top )

@@ -171,5 +171,8 @@ STR is a substring to complete."
   (matlab-shell)
   )
 
+(eval-after-load "matlab-mode"
+  '(define-key matlab-mode-map (kbd "C-j") nil))
+
 ;(add-to-list 'ac-modes 'matlab-mode)
 

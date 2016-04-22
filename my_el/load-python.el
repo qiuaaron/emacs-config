@@ -12,6 +12,8 @@
 (autoload 'pymacs-load "pymacs" nil t)
 (setenv "PYTHONPATH" (concat (getenv "PYTHONPATH")
 			     ":" (expand-file-name "~/.emacs.d/emacs_mode/python/pymacs")))
+(setenv "PYTHONPATH" (concat (getenv "PYTHONPATH")
+			     ":" (expand-file-name "~/.emacs.d/emacs_mode/python/ropemacs")))
 (setenv "PYMACS_PYTHON" "python2.7") 
 ;(require 'pymacs)
 (defun load-ropemacs ()

@@ -183,32 +183,61 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; add error regexp for vcs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar vcs-error-regexp-emacs-alist
-  '(
-    (vcs-error
-					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
-     "\\(Error\\)-\\[\\(.+\\)\\] .*\n\\(.*\\), \\([0-9]+\\)" 3 4 2 )
+;; (defvar vcs-error-regexp-emacs-alist
+;;   '(
+;;     (vcs-error
+;; 					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
+;;      "\\(Error\\)-\\[\\(.+\\)\\] .*\n\\(.*\\), \\([0-9]+\\)" 3 4 2 )
 
-    (vcs-syntax-error
-					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
-     "\\(Error\\)-\\[\\(.+\\)\\] .*\n.*\n  \\(.*\\), \\([0-9]+\\)" 3 4 2 )
-    (vcs-warning
-					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
-     "\\(Warning\\)-\\[\\(.+\\)\\] .*\n\\(.*\\), \\([0-9]+\\)" 3 4 1 )
+;;     (vcs-syntax-error
+;; 					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
+;;      "\\(Error\\)-\\[\\(.+\\)\\] .*\n.*\n  \\(.*\\), \\([0-9]+\\)" 3 4 2 )
+;;     (vcs-warning
+;; 					;"\\(Error\\|War\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
+;;      "\\(Warning\\)-\\[\\(.+\\)\\] .*\n\\(.*\\), \\([0-9]+\\)" 3 4 1 )
+;;   )
+    
+;;   "List of regexps for synopsys vcs ")
+
+;; (defun vcs-error-regexp-add-emacs ()
+;;    (interactive)
+;;    (if (boundp 'compilation-error-regexp-alist-alist)
+;;        (progn
+;;          (if (not (assoc 'vcs-syntax-error compilation-error-regexp-alist-alist))
+;;              (mapcar
+;;               (lambda (item)
+;;                 (push (car item) compilation-error-regexp-alist)
+;;                 (push item compilation-error-regexp-alist-alist)
+;;                 )
+;;               vcs-error-regexp-emacs-alist)))))
+
+;; (if (featurep 'emacs) (add-hook 'compilation-mode-hook 'vcs-error-regexp-add-emacs))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;add error regexp for ius
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defvar ius-error-regexp-emacs-alist
+  '(
+    (ius-syntax-error "\\(\*E\\),.*?(\\(.*?\\),\\([0-9]+\\)|\\([0-9]+\\))"  2 3 )
+    (ius-syntax-Warning "\\(\*W\\),.*?(\\(.*?\\),\\([0-9]+\\)|\\([0-9]+\\))"  2 3 )
   )
     
-  "List of regexps for synopsys vcs ")
+  "List of regexps for cadence ius ")
 
-(defun vcs-error-regexp-add-emacs ()
+(defun ius-error-regexp-add-emacs ()
    (interactive)
    (if (boundp 'compilation-error-regexp-alist-alist)
        (progn
-         (if (not (assoc 'vcs-syntax-error compilation-error-regexp-alist-alist))
+         (if (not (assoc 'ius-syntax-error compilation-error-regexp-alist-alist))
              (mapcar
               (lambda (item)
                 (push (car item) compilation-error-regexp-alist)
                 (push item compilation-error-regexp-alist-alist)
                 )
-              vcs-error-regexp-emacs-alist)))))
+              ius-error-regexp-emacs-alist)))))
 
-(if (featurep 'emacs) (add-hook 'compilation-mode-hook 'vcs-error-regexp-add-emacs))
+(if (featurep 'emacs) (add-hook 'compilation-mode-hook 'ius-error-regexp-add-emacs))
+
+

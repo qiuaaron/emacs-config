@@ -1,0 +1,12 @@
+#contributor : Aaron
+#name : vv_always_ff_neg_rst
+#key:always_ff_negedg_rst
+# --
+always @ ( posedge ${1:clk_sys} or negedge ${2:rst_sys} ) begin
+  if ( !$2 ) begin
+    /*AUTORESET*/
+  end
+  else begin
+    $0
+  end
+end
